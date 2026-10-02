@@ -1,1 +1,5 @@
 # outer-joins-ministore-schema.sql
+¿Por qué usaste LEFT JOIN para la Consulta 1 y no INNER JOIN? ¿Qué se perdería si usaras INNER JOIN? Use LEFT JOIN para poder identificar los valores NULL, si usaría JOIN solamente no los podria visualizar.
+¿Por qué usaste RIGHT JOIN para la Consulta 2? ¿Qué tabla está a la izquierda y cuál a la derecha en tu consulta? Use RIGTH JOIN para poder ver los productos que no existian con ventas asociadas, por un posible error de carga. En la tabla izquierda mantuve productos y en la derecha deje las ventas.
+¿Qué representan los valores NULL en cada resultado? Explicá con un ejemplo concreto de los datos qué significa que venta_id sea NULL en la Consulta 1 y que producto_id de productos sea NULL en la Consulta 2. En la consulta 1, el valor NULL por ejemplo de parlante Bluetooth, significa que ese producto no fue vendido, es decir no tiene venta asociada. En la consulta 2, hay una venta asociada a un producto que no existe.
+¿Cuándo usarías FULL OUTER JOIN en un caso real de negocio? Creo que lo usaría para hacer un control o auditar los valores null que tienen mis tablas.
